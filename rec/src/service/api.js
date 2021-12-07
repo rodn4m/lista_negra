@@ -9,8 +9,8 @@ let r = await api.get(`/tb_lista_negra/`);
 return r.data;
 }
 
-async inserirNomes(id_nome) {
-    let r = await api.post(`/id_nome/`, { nome: id_nome });
+async inserirNomes(nome) {
+    let r = await api.post(`/id_nome/`, { nome });
     return r.data;
 }
 }

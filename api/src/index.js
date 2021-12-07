@@ -22,7 +22,7 @@ app.post('/id_nome', async (req, resp) => {
 
         let s = await db.tb_lista_negra.findOne({ where: { id_nome: nomeParam.nome } });
         if (s != null)
-            return resp.send({ erro: 'Nome já existe!' });
+        return resp.send({ erro: 'Nome já existe!' });
 
         let r = await db.tb_lista_negra.create({
             id_nome: nomeParam.nome,
@@ -32,3 +32,5 @@ app.post('/id_nome', async (req, resp) => {
         resp.send({ erro: 'Ocorreu um erro!'})
     }
 })
+
+app.listen(process.env.PORT, x => console.log(`subiu na porta ${process.env.PORT}`));
